@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <manifest
-      xmlns:android="http://schemas.android.com/apk/res/android"
-      android:versionCode="221010"
-      android:versionName="0.1.0"
-      android:installLocation="auto">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.itsbekas.nfcreader"
+    android:versionCode="1"
+    android:versionName="0.1.0"
+    android:installLocation="auto">
 
     <uses-permission android:name="android.permission.NFC"/>
-    <uses-sdk android:minSdkVeresion="10"/>
-    <uses-feature android:name="android.hardware.nfc"/>
+    <uses-sdk android:minSdkVeresion="14"/>
+    <uses-feature android:name="android.hardware.nfc" android:required="true"/>
 
     <application>
+        <intent-filter>
+            <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
+            <category android:name="android.intent.category.DEFAULT"/>
+            <data android:mimeType="text/plain"/>
+        </intent-filter>
+    </application>
+</manifest>
       
