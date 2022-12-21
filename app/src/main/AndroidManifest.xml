@@ -12,11 +12,13 @@
     <uses-feature android:name="android.hardware.nfc" android:required="true"/>
 
     <application>
-        <intent-filter>
-            <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
-            <category android:name="android.intent.category.DEFAULT"/>
-            <data android:mimeType="text/plain"/>
-        </intent-filter>
+        <service android:name="com.itsbekas.nfcreader.ReadTag">
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="application/com.itsbekas.nfcreader"/>
+            </intent-filter>
+        </service>
     </application>
 </manifest>
-      
+
