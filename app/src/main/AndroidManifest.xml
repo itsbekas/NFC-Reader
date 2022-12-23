@@ -8,11 +8,12 @@
     android:installLocation="auto">
 
     <uses-permission android:name="android.permission.NFC"/>
-    <uses-sdk android:minSdkVeresion="14"/>
+    <uses-sdk android:minSdkVersion="14"/>
     <uses-feature android:name="android.hardware.nfc" android:required="true"/>
 
     <application>
-        <service android:name="com.itsbekas.nfcreader.ReadTag">
+        <service android:name="com.itsbekas.nfcreader.ReadTag"
+                 android:exported="true">
             <intent-filter>
                 <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
                 <category android:name="android.intent.category.DEFAULT"/>
